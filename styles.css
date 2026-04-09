@@ -175,6 +175,7 @@ nav .nav-right a:hover {
   transform: translateY(-100%);
   transition: transform 0.35s ease;
   pointer-events: none;
+  height: 322px;
 }
 
 .flyout.open {
@@ -218,17 +219,17 @@ nav .nav-right a:hover {
 #hero {
   background: var(--blue);
   min-height: 100vh;
-  display: grid;
+  display: flex;
   padding: 380px 48px 60px;
   gap: 0;
   position: relative;
 }
 
 #hero .hero-logo {
-  /* grid-column: 2 / 4; */
   display: flex;
   align-items: flex-end;
-  padding-bottom: 40px;
+  width: 100%;
+  flex: 1;
 }
 
 .archive-wordmark svg {
@@ -352,7 +353,7 @@ section {
 }
 
 .about-text p:last-child {
-  margin-bottom: 0;
+  margin-bottom: 30px;
 }
 
 .about-text a:hover {
@@ -371,7 +372,7 @@ section {
   font-family: var(--font-body);
   font-size: clamp(26px, calc(2.903vw - 9.74px), 46px);
   color: var(--blue);
-  margin-bottom: 40px;
+  margin-bottom: 15px;
 }
 
 #support .logos-row {
@@ -484,7 +485,7 @@ section {
 }
 
 .btn-purchase {
-  font-size: clamp(73px, 10vw, 203px);
+  font-size: clamp(63px, 10vw, 203px);
   color: var(--blue);
   text-decoration: none;
   transition: color 0.2s;
@@ -557,7 +558,7 @@ section {
   font-family: var(--font-body);
   font-size: clamp(48px, 4vw, 83px);
   color: var(--blue);
-  padding-top: 20px;
+  padding-top: 24px;
 }
 
 .schedule-talk {
@@ -565,6 +566,7 @@ section {
   font-size: clamp(73px, 10vw, 203px);
   color: var(--blue);
   grid-column: span 2;
+  line-height: 0.85;
 }
 
 .schedule-talk a {
@@ -589,7 +591,7 @@ section {
 
 .venue-image {
   width: 100%;
-  height: 80vh;
+  aspect-ratio: 16/9;
   object-fit: cover;
   display: block;
   margin-bottom: 2px;
@@ -724,10 +726,9 @@ footer {
 /* ─── RESPONSIVE ─── */
 @media (max-width: 900px) {
   nav {
-    padding: 20px 24px 0px 24px;
+    padding: 20px 28px 0px 28px;
     display: flex;
     justify-content: space-between;
-    gap: 24px;
   }
 
   nav .nav-links {
@@ -762,18 +763,21 @@ footer {
   }
 
   section {
-    padding: 60px 24px;
+    padding: 30px 28px;
+  }
+
+  .section-label{
+    gap: 9px;
   }
 
   #hero {
     grid-template-columns: 1fr;
-    padding: 100px 24px 48px;
+    padding: 100px 28px 0px;
     min-height: auto;
   }
 
   #hero .hero-logo {
     grid-column: 1;
-    padding-bottom: 20px;
   }
 
   #hero .hero-meta {
@@ -794,13 +798,15 @@ footer {
 
   #support {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 0px;
   }
 
   #support .logos-row{
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 14px;
+    gap: 40px;
+    justify-items: center;
+    padding: 20px;
   }
   .speakers-grid {
     grid-template-columns: 1fr;
@@ -828,7 +834,10 @@ footer {
 
   .schedule-row {
     grid-template-columns: 1fr;
-    gap: 14px;
+    gap: 0px;
+  }
+  .schedule-row:last-child {
+    margin-top: 90px;
   }
 
   .schedule-grid {
@@ -836,7 +845,7 @@ footer {
   }
 
   .venue-image {
-    height: 40vw;
+    aspect-ratio: 16/9;
     min-height: 200px;
   }
 
@@ -846,10 +855,14 @@ footer {
     gap: 14px;
   }
 
+  .venue-info-grid:last-child .venue-block {
+    padding-bottom: 0;
+  }
+
   footer {
     grid-template-columns: 1fr;
     gap: 40px;
-    padding: 48px 24px;
+    padding: 28px 28px;
   }
 
   .footer-logo--desktop {
