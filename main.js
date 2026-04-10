@@ -1,6 +1,7 @@
 // ─── HERO → NAV SCROLL TRANSITION ───
 if (document.querySelector('.hero-logo')) {
   gsap.registerPlugin(ScrollTrigger);
+  ScrollTrigger.normalizeScroll(true);
 
   let flyingEl = null;
 
