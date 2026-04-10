@@ -1,5 +1,7 @@
 // ─── HERO → NAV SCROLL TRANSITION ───
-if (document.querySelector('.hero-logo')) {
+(function () {
+  if (!document.querySelector('.hero-logo')) return;
+
   gsap.registerPlugin(ScrollTrigger);
 
   let flyingEl = null;
@@ -113,7 +115,7 @@ if (document.querySelector('.hero-logo')) {
       ScrollTrigger.refresh();
     }, 250);
   });
-}
+}());
 
 function openFlyout() {
   document.getElementById('flyout').classList.add('open');
