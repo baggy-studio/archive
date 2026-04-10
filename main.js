@@ -2,8 +2,8 @@
 if (document.querySelector('.hero-logo')) {
   gsap.registerPlugin(ScrollTrigger);
 
-
   let flyingEl = null;
+  let mobileScrollHandler = null;
 
   function initHeroAnimation() {
     // Clean up any previous instances
@@ -11,6 +11,10 @@ if (document.querySelector('.hero-logo')) {
     if (flyingEl) {
       flyingEl.remove();
       flyingEl = null;
+    }
+    if (mobileScrollHandler) {
+      window.removeEventListener('scroll', mobileScrollHandler);
+      mobileScrollHandler = null;
     }
 
     const heroSvg     = document.querySelector('.hero-logo svg');
@@ -59,17 +63,8 @@ if (document.querySelector('.hero-logo')) {
       ? ['.nav-middle']
       : ['.nav-middle', '.nav-right'];
 
-    // ── Animate ──
-    const heroTl = gsap.timeline({
-      scrollTrigger: {
-        trigger: '#hero',
-        start: 'top top',
-        end: '+=400',
-        pin: !isMobile,
-        scrub: 1,
-      }
-    });
-
+    // ── Build timeline (paused — driven differently per platform below) ──
+    const heroTl = gsap.timeline({ paused: true });
     heroTl
       // nav-middle (and nav-right on desktop) slide upward and disappear
       .to(fadeTargets, { y: -24, autoAlpha: 0, duration: 0.35 }, 0)
@@ -85,6 +80,26 @@ if (document.querySelector('.hero-logo')) {
       // quick hand-off: flying element out, nav-wordmark in
       .to(flyingEl,    { autoAlpha: 0, duration: 0.12 }, 0.88)
       .to(navWordmark, { autoAlpha: 1, pointerEvents: 'auto', duration: 0.12 }, 0.88);
+
+    if (isMobile) {
+      // On mobile, drive progress directly from window.scrollY via a native
+      // passive scroll listener — bypasses ScrollTrigger's iOS incompatibilities
+      mobileScrollHandler = function () {
+        heroTl.progress(Math.min(1, window.scrollY / 400));
+      };
+      window.addEventListener('scroll', mobileScrollHandler, { passive: true });
+      mobileScrollHandler(); // sync on init
+    } else {
+      // Desktop: pin the hero and scrub with ScrollTrigger
+      ScrollTrigger.create({
+        animation: heroTl,
+        trigger: '#hero',
+        start: 'top top',
+        end: '+=400',
+        pin: true,
+        scrub: 1,
+      });
+    }
   }
 
   window.addEventListener('load', initHeroAnimation);
