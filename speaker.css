@@ -13,6 +13,7 @@ nav .nav-middle {
 
 nav .nav-wordmark {
   opacity: 1 !important;
+  pointer-events: all;
 }
 
 nav .nav-back a {
