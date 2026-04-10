@@ -5,8 +5,6 @@
   gsap.registerPlugin(ScrollTrigger);
 
   let flyingEl = null;
-  let mobileScrollHandler = null;
-  let mobileTicker = null;
 
   function initHeroAnimation() {
     // Clean up any previous instances
@@ -14,14 +12,6 @@
     if (flyingEl) {
       flyingEl.remove();
       flyingEl = null;
-    }
-    if (mobileScrollHandler) {
-      window.removeEventListener('scroll', mobileScrollHandler);
-      mobileScrollHandler = null;
-    }
-    if (mobileTicker) {
-      gsap.ticker.remove(mobileTicker);
-      mobileTicker = null;
     }
 
     const heroSvg     = document.querySelector('.hero-logo svg');
@@ -70,8 +60,16 @@
       ? ['.nav-middle']
       : ['.nav-middle', '.nav-right'];
 
-    // ── Build timeline (paused — driven differently per platform below) ──
-    const heroTl = gsap.timeline({ paused: true });
+    // ── Animate ──
+    const heroTl = gsap.timeline({
+      scrollTrigger: {
+        trigger: '#hero',
+        start: 'top top',
+        end: '+=400',
+        pin: !isMobile,
+        scrub: 1,
+      }
+    });
     heroTl
       // nav-middle (and nav-right on desktop) slide upward and disappear
       .to(fadeTargets, { y: -24, autoAlpha: 0, duration: 0.35 }, 0)
@@ -87,37 +85,6 @@
       // quick hand-off: flying element out, nav-wordmark in
       .to(flyingEl,    { autoAlpha: 0, duration: 0.12 }, 0.88)
       .to(navWordmark, { autoAlpha: 1, pointerEvents: 'auto', duration: 0.12 }, 0.88);
-
-    if (isMobile) {
-      // Track target progress from scroll, then lerp toward it each frame
-      // so the animation feels as smooth as scrub does on desktop
-      let targetProg = Math.min(1, window.scrollY / 400);
-
-      mobileScrollHandler = () => {
-        targetProg = Math.min(1, window.scrollY / 400);
-      };
-      window.addEventListener('scroll', mobileScrollHandler, { passive: true });
-
-      mobileTicker = () => {
-        const current = heroTl.progress();
-        const diff = targetProg - current;
-        if (Math.abs(diff) < 0.001) return;
-        heroTl.progress(current + diff * 0.15);
-      };
-      gsap.ticker.add(mobileTicker);
-
-      heroTl.progress(targetProg); // snap to current position immediately on init
-    } else {
-      // Desktop: pin the hero and scrub with ScrollTrigger
-      ScrollTrigger.create({
-        animation: heroTl,
-        trigger: '#hero',
-        start: 'top top',
-        end: '+=400',
-        pin: true,
-        scrub: 1,
-      });
-    }
   }
 
   window.addEventListener('load', initHeroAnimation);
