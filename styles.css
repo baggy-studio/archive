@@ -220,7 +220,7 @@ nav .nav-right a:hover {
   background: var(--blue);
   min-height: 100vh;
   display: flex;
-  padding: max(380px, 22vw) 48px 60px;
+  padding: max(380px, 23vw) 48px 60px;
   gap: 0;
   position: relative;
 }
