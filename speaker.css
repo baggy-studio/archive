@@ -66,8 +66,9 @@ nav .nav-title {
 }
 
 .speaker-hero-name {
-  font-size: clamp(40px, 5vw, 80px);
+  font-size: clamp(48px, 4vw, 83px);
   color: var(--white);
+  line-height: 0.85;
 }
 
 .speaker-hero-company {
@@ -78,8 +79,8 @@ nav .nav-title {
 /* ─── BIO ─── */
 .speaker-bio-section {
   background: var(--blue);
-  padding-right: 48px;
   grid-column: 2 / span 2;
+  padding-top: 20px;
 }
 
 .speaker-bio-text {
@@ -100,7 +101,7 @@ nav .nav-title {
 .speaker-links-label {
   font-size: clamp(26px, calc(2.903vw - 9.74px), 46px);
   color: var(--white);
-  margin-bottom: 12px;
+  /* margin-bottom: 12px; */
 }
 
 .speaker-links a {
@@ -123,7 +124,7 @@ nav .nav-title {
   #speaker-main {
     grid-template-columns: 1fr;
     gap: 0px;
-    padding: 91px 24px 0px 24px;
+    padding: 91px 28px 0px 28px;
   }
 
   .speaker-hero {
@@ -138,6 +139,9 @@ nav .nav-title {
     display: block;
     min-height: 280px;
     position: static;
+    max-width: 200px;
+    margin-left: auto;
+    object-fit: cover;
   }
 
   .speaker-hero-content { gap:30px; }

@@ -140,7 +140,7 @@ function render() {
     <div class="speaker-bio-section">
       <div class="speaker-bio-text">${bioHTML}</div>
       <div class="speaker-links-section">
-        <div class="speaker-links-label">Links</div>
+        <div class="speaker-links-label">Links:</div>
         <div class="speaker-links">${linksHTML}</div>
       </div>
     </div>

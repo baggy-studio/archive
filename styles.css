@@ -232,6 +232,10 @@ nav .nav-right a:hover {
   flex: 1;
 }
 
+.archive-wordmark {
+  width: 100%;
+}
+
 .archive-wordmark svg {
   width: 100%;
   height: auto;
@@ -729,6 +733,7 @@ footer {
     padding: 20px 28px 0px 28px;
     display: flex;
     justify-content: space-between;
+    gap: 57px;
   }
 
   nav .nav-links {
@@ -740,14 +745,15 @@ footer {
   }
 
   nav .nav-middle {
-    display: none;
+    display: block;
+    width: auto;
   }
 
   nav .nav-wordmark {
     display: block;
     flex: 1;
-    opacity: 1 !important;
-    pointer-events: auto;
+    opacity: 0;
+    pointer-events: none;
     align-self: center;
   }
 
@@ -772,8 +778,8 @@ footer {
 
   #hero {
     grid-template-columns: 1fr;
-    padding: 100px 28px 0px;
-    min-height: auto;
+    padding: 100px 28px 60px;
+    min-height: 100dvh;
   }
 
   #hero .hero-logo {
@@ -824,7 +830,10 @@ footer {
 
   .tickets-inner {
     grid-template-columns: 1fr;
-    gap: 40px;
+    gap: 20px;
+  }
+  .ticket-info{
+    line-height: 0.85;
   }
 
   #schedule .section-header {
@@ -864,6 +873,9 @@ footer {
     gap: 40px;
     padding: 28px 28px;
   }
+  .footer-links {
+    gap: 24px;
+  }
 
   .footer-logo--desktop {
     display: none;
@@ -876,6 +888,9 @@ footer {
 
   .footer-top {
     grid-template-columns: 1fr;
-    gap: 14px;
+    row-gap: 45px;
+  }
+  .footer-contact a:first-child{
+    margin-bottom: 24px;
   }
 }

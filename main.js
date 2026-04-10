@@ -1,19 +1,38 @@
 // ─── HERO → NAV SCROLL TRANSITION ───
-if (window.innerWidth > 900 && document.querySelector('.hero-logo')) {
+if (document.querySelector('.hero-logo')) {
   gsap.registerPlugin(ScrollTrigger);
 
-  window.addEventListener('load', () => {
+  let flyingEl = null;
+
+  function initHeroAnimation() {
+    // Clean up any previous instances
+    ScrollTrigger.getAll().forEach(st => st.kill());
+    if (flyingEl) {
+      flyingEl.remove();
+      flyingEl = null;
+    }
+
     const heroSvg     = document.querySelector('.hero-logo svg');
     const navWordmark = document.querySelector('.nav-wordmark');
     const navSvg      = navWordmark.querySelector('svg');
+    const isMobile    = window.innerWidth <= 900;
+
+    // Reset all GSAP-managed inline styles back to CSS defaults
+    heroSvg.style.visibility = '';
+    gsap.set(navWordmark, { clearProps: 'all' });
+    gsap.set('.nav-middle', { clearProps: 'all' });
+    gsap.set('.nav-right',  { clearProps: 'all' });
+
+    // Set animation starting state
+    gsap.set(navWordmark, { autoAlpha: 0, pointerEvents: 'none' });
 
     // ── Build a free-floating clone of the hero SVG ──
-    const flyingEl = document.createElement('div');
+    flyingEl = document.createElement('div');
     flyingEl.className = 'flying-wordmark';
     flyingEl.appendChild(heroSvg.cloneNode(true));
     document.body.appendChild(flyingEl);
 
-    // Position it exactly over the hero SVG
+    // Position it exactly over the hero SVG (fixed positioning uses viewport coords)
     const heroRect = heroSvg.getBoundingClientRect();
     const navRect  = navSvg.getBoundingClientRect();
 
@@ -21,7 +40,7 @@ if (window.innerWidth > 900 && document.querySelector('.hero-logo')) {
     flyingEl.style.top   = heroRect.top  + 'px';
     flyingEl.style.width = heroRect.width + 'px';
 
-    // Hide the originals — flying element covers hero, nav-wordmark waits
+    // Hide the original SVG — flying element covers it
     heroSvg.style.visibility = 'hidden';
 
     // ── Calculate center-to-center movement + scale ──
@@ -34,20 +53,25 @@ if (window.innerWidth > 900 && document.querySelector('.hero-logo')) {
     const endX     = navCX - heroCX;
     const endY     = navCY - heroCY;
 
+    // On mobile, nav-right is already hidden by CSS — only fade nav-middle
+    const fadeTargets = isMobile
+      ? ['.nav-middle']
+      : ['.nav-middle', '.nav-right'];
+
     // ── Animate ──
     const heroTl = gsap.timeline({
       scrollTrigger: {
         trigger: '#hero',
         start: 'top top',
-        end: '+=800',
+        end: '+=400',
         pin: true,
         scrub: 1,
       }
     });
 
     heroTl
-      // nav-middle and nav-right slide upward and disappear
-      .to(['.nav-middle', '.nav-right'], { y: -24, autoAlpha: 0, duration: 0.35 }, 0)
+      // nav-middle (and nav-right on desktop) slide upward and disappear
+      .to(fadeTargets, { y: -24, autoAlpha: 0, duration: 0.35 }, 0)
       // flying wordmark physically moves + shrinks to nav position
       .to(flyingEl, {
         x: endX,
@@ -60,6 +84,18 @@ if (window.innerWidth > 900 && document.querySelector('.hero-logo')) {
       // quick hand-off: flying element out, nav-wordmark in
       .to(flyingEl,    { autoAlpha: 0, duration: 0.12 }, 0.88)
       .to(navWordmark, { autoAlpha: 1, pointerEvents: 'auto', duration: 0.12 }, 0.88);
+  }
+
+  window.addEventListener('load', initHeroAnimation);
+
+  // On resize, rebuild with fresh measurements so positions stay accurate
+  let resizeTimer;
+  window.addEventListener('resize', () => {
+    clearTimeout(resizeTimer);
+    resizeTimer = setTimeout(() => {
+      initHeroAnimation();
+      ScrollTrigger.refresh();
+    }, 250);
   });
 }
 
