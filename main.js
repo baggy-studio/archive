@@ -6,6 +6,7 @@
 
   let flyingEl = null;
   let mobileScrollHandler = null;
+  let mobileTicker = null;
 
   function initHeroAnimation() {
     // Clean up any previous instances
@@ -17,6 +18,10 @@
     if (mobileScrollHandler) {
       window.removeEventListener('scroll', mobileScrollHandler);
       mobileScrollHandler = null;
+    }
+    if (mobileTicker) {
+      gsap.ticker.remove(mobileTicker);
+      mobileTicker = null;
     }
 
     const heroSvg     = document.querySelector('.hero-logo svg');
@@ -84,13 +89,24 @@
       .to(navWordmark, { autoAlpha: 1, pointerEvents: 'auto', duration: 0.12 }, 0.88);
 
     if (isMobile) {
-      // On mobile, drive progress directly from window.scrollY via a native
-      // passive scroll listener — bypasses ScrollTrigger's iOS incompatibilities
-      mobileScrollHandler = function () {
-        heroTl.progress(Math.min(1, window.scrollY / 400));
+      // Track target progress from scroll, then lerp toward it each frame
+      // so the animation feels as smooth as scrub does on desktop
+      let targetProg = Math.min(1, window.scrollY / 400);
+
+      mobileScrollHandler = () => {
+        targetProg = Math.min(1, window.scrollY / 400);
       };
       window.addEventListener('scroll', mobileScrollHandler, { passive: true });
-      mobileScrollHandler(); // sync on init
+
+      mobileTicker = () => {
+        const current = heroTl.progress();
+        const diff = targetProg - current;
+        if (Math.abs(diff) < 0.001) return;
+        heroTl.progress(current + diff * 0.15);
+      };
+      gsap.ticker.add(mobileTicker);
+
+      heroTl.progress(targetProg); // snap to current position immediately on init
     } else {
       // Desktop: pin the hero and scrub with ScrollTrigger
       ScrollTrigger.create({
