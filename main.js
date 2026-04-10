@@ -66,7 +66,7 @@
         trigger: '#hero',
         start: 'top top',
         end: '+=400',
-        pin: !isMobile,
+        pin: true,
         scrub: 1,
       }
     });
