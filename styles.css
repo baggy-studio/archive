@@ -860,6 +860,7 @@ footer {
 
 
   .venue-block {
+    padding-top: 20px;
     grid-template-columns: 1fr;
     gap: 14px;
   }
