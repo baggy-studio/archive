@@ -2,12 +2,14 @@
   font-family: 'Pitch Bold';
   src: url('assets/fonts/Pitch-Bold.otf') format('opentype');
   font-style: normal;
+  font-display: swap;
 }
 
 @font-face {
   font-family: 'NYC Sans';
   src: url('assets/fonts/NYC_Sans_v0_2-Medium-TRIAL.otf') format('opentype');
   font-style: normal;
+  font-display: swap;
 }
 
 *,
@@ -765,6 +767,13 @@ footer {
     width: 100%;
     height: auto;
     display: block;
+  }
+
+  .logo img {
+    max-width: 150px;
+    width: 100%;
+    max-height: none;
+    height: auto;
   }
 
   .menu-btn {

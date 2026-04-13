@@ -7,7 +7,46 @@
   <title>Archive — A Conference on Design Preservation</title>
   <link rel="icon" type="image/png" href="assets/favicon/ARCHIVE_FAV.png" />
   <meta name="description" content="Archive is a one-day conference on design preservation, featuring talks by leading designers and historians. May 2025, New York City." />
-  <link rel="stylesheet" href="styles.css" />
+  <!-- Critical CSS: inlined so the nav + hero paint without waiting for styles.css -->
+  <style>
+    @font-face{font-family:'NYC Sans';src:url('assets/fonts/NYC_Sans_v0_2-Medium-TRIAL.otf') format('opentype');font-style:normal;font-display:swap}
+    @font-face{font-family:'Pitch Bold';src:url('assets/fonts/Pitch-Bold.otf') format('opentype');font-style:normal;font-display:swap}
+    *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;font-size:inherit;font-weight:inherit}
+    :root{--blue:#0085ff;--blue-light:#cce7ff;--blue-mid:#005fc0;--black:#000;--white:#fff;--off-white:#f5f2ee;--font-display:'Pitch Bold',serif;--font-body:'NYC Sans',sans-serif}
+    html{scroll-behavior:smooth}
+    body{font-family:var(--font-body);background:var(--white);color:var(--white);overflow-x:hidden}
+    nav{position:fixed;top:0;left:0;right:0;z-index:100;display:grid;grid-template-columns:repeat(3,1fr);gap:85px;padding:70px 85px 0 85px;background-color:var(--blue)}
+    nav .nav-links{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-self:start}
+    nav .nav-middle{position:absolute;top:24px;left:calc(48px + (100% - 264px)/3 + 84px);width:calc((100% - 264px)/3)}
+    nav .nav-right{position:absolute;top:24px;right:48px;width:calc((100% - 264px)/3)}
+    nav .menu-btn{grid-column:1;grid-row:1}
+    nav .nav-wordmark{grid-column:2/4;grid-row:1;align-self:start;opacity:0;pointer-events:none}
+    nav .nav-wordmark svg{width:100%;height:auto;display:block}
+    nav .nav-links a{font-family:var(--font-body);font-size:clamp(26px,calc(2.903vw - 9.74px),46px);color:var(--blue-light);text-decoration:none}
+    nav .nav-right,nav .nav-middle{font-family:var(--font-body);font-size:clamp(26px,calc(2.903vw - 9.74px),46px);color:var(--white)}
+    .menu-btn{display:none;background:none;border:none;font-family:var(--font-body);font-size:clamp(26px,calc(2.903vw - 9.74px),46px);color:var(--blue-light);cursor:pointer;padding:0}
+    .flyout{position:fixed;top:0;left:0;width:100%;background-color:var(--blue-light);z-index:200;padding:28px 28px 40px;display:flex;align-items:flex-start;transform:translateY(-100%);transition:transform .35s ease;pointer-events:none;height:322px}
+    .flying-wordmark{position:fixed;z-index:200;pointer-events:none}
+    .flying-wordmark svg{width:100%;height:auto;display:block}
+    #hero{background:var(--blue);min-height:100vh;display:flex;padding:max(380px,25vw) 48px 60px;position:relative}
+    #hero .hero-logo{display:flex;align-items:flex-end;width:100%;flex:1}
+    .archive-wordmark{width:100%}
+    .archive-wordmark svg{width:100%;height:auto;display:block}
+    @media(max-width:900px){
+      nav{padding:20px 28px 0 28px;display:flex;justify-content:space-between;gap:57px}
+      nav .nav-links{display:none}
+      nav .nav-right{display:none}
+      nav .nav-middle{display:block;width:auto}
+      nav .nav-wordmark{display:block;flex:1;opacity:0;pointer-events:none;align-self:center}
+      .menu-btn{display:flex;flex-shrink:0}
+      #hero{padding:100px 28px 60px;min-height:100dvh}
+    }
+  </style>
+  <!-- Full stylesheet loaded async — does not block first paint -->
+  <link rel="preload" href="styles.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+  <noscript><link rel="stylesheet" href="styles.css"></noscript>
+  <!-- Preload the body font — used in nav text visible above the fold -->
+  <link rel="preload" href="assets/fonts/NYC_Sans_v0_2-Medium-TRIAL.otf" as="font" type="font/otf" crossorigin>
   <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 </head>
 
