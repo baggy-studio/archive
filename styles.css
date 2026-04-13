@@ -792,7 +792,6 @@ footer {
   #hero {
     grid-template-columns: 1fr;
     padding: 100px 28px 60px;
-    /* min-height: 100dvh; */
   }
 
   #hero .hero-logo {
