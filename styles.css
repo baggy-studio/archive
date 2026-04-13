@@ -384,9 +384,14 @@ section {
 }
 
 .logo img {
-  max-width: 200px;
+  max-width: 150px;
   width: 100%;
   max-height: 88px;
+}
+
+.logo img.first-logo {
+  padding-left: 30px;
+  padding-right: 30px;
 }
 
 /* ─── SPEAKERS ─── */
