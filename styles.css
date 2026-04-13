@@ -421,16 +421,16 @@ section {
 }
 
 .speaker-card .img-hover {
-  display: none;
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
+  opacity: 0;
 }
 
 @media (hover: hover) {
   .speaker-card:hover .img-default { opacity: 0; }
-  .speaker-card:hover .img-hover { display: block; }
+  .speaker-card:hover .img-hover { opacity: 1; }
 }
 
 .speaker-card-inner {
