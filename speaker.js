@@ -145,6 +145,10 @@ function render() {
     </div>
 
   `;
+
+  if (window.location.hash === '#speaker-main') {
+    main.scrollIntoView();
+  }
 }
 
 render();
