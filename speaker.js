@@ -129,15 +129,14 @@ function render() {
 
   main.innerHTML = `
     <div class="speaker-hero">
-      <div class="speaker-hero-content">
-        ${photoHTML}
-        <div class="speaker-hero-text">
-          <div class="speaker-hero-name">${speaker.name}</div>
-          <div class="speaker-hero-company">${speaker.company}</div>
-        </div>
+      <div class="section-label">Speaker</div>
+      <div class="speaker-hero-text">
+        <div class="speaker-hero-name">${speaker.name}</div>
+        <div class="speaker-hero-company">${speaker.company}</div>
       </div>
     </div>
     <div class="speaker-bio-section">
+    ${photoHTML}
       <div class="speaker-bio-text">${bioHTML}</div>
       <div class="speaker-links-section">
         <div class="speaker-links-label">Links:</div>
