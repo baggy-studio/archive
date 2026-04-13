@@ -32,8 +32,8 @@ nav .nav-title {
 #speaker-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
-  padding: 280px 48px 0px 48px;
+  gap: 85px;
+  padding: 280px 85px 0px 85px;
 }
 
 /* ─── SPEAKER HERO ─── */
@@ -146,5 +146,5 @@ nav .nav-title {
   }
 
   .speaker-hero-content { gap:30px; }
-  .speaker-links-section { padding: 48px 0px 60px; }
+  .speaker-links-section { padding: 85px 0px 60px; }
 }

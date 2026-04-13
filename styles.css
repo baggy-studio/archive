@@ -51,8 +51,8 @@ nav {
   z-index: 100;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
-  padding: 24px 48px 0px 48px;
+  gap: 85px;
+  padding: 24px 85px 0px 85px;
   mix-blend-mode: normal;
   background-color:var(--blue);
 }
@@ -278,7 +278,7 @@ nav .nav-right a:hover {
 
 /* ─── SECTION SHARED ─── */
 section {
-  padding: 80px 48px;
+  padding: 80px 85px;
 }
 
 .section-label {
@@ -288,7 +288,6 @@ section {
   margin-bottom: 12px;
   display: flex;
   align-items: flex-start;
-  gap: 15px;
   flex-direction: column;
   max-width: fit-content;
 }
@@ -316,7 +315,7 @@ section {
 #about .about-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
 }
 
 .about-label {
@@ -369,7 +368,7 @@ section {
   background: var(--blue-light);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
 }
 
 #support .support-label {
@@ -400,7 +399,7 @@ section {
 .speakers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
   margin-top: 0;
 }
 
@@ -450,7 +449,7 @@ section {
   font-size: clamp(48px, 4vw, 83px);
   color: var(--blue);
   margin-bottom: 6px;
-  line-height: 0.8;
+  line-height: 0.85;
 }
 
 .speaker-company {
@@ -466,7 +465,7 @@ section {
   color: var(--blue);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
 }
 
 .tickets-inner {
@@ -531,7 +530,7 @@ section {
 #schedule .section-header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
   margin-bottom: 30px;
 }
 
@@ -551,7 +550,7 @@ section {
 .schedule-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
 }
 
 .schedule-row:last-child {
@@ -570,7 +569,7 @@ section {
   font-size: clamp(73px, 10vw, 203px);
   color: var(--blue);
   grid-column: span 2;
-  line-height: 0.85;
+  line-height: 1;
 }
 
 .schedule-talk a {
@@ -612,7 +611,7 @@ section {
   padding: 40px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
 
 }
 
@@ -655,13 +654,13 @@ section {
 footer {
   background: var(--blue);
   color: var(--white);
-  padding: 60px 48px;
+  padding: 60px 85px;
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 84px;
+  gap: 85px;
   align-items: start;
   margin-bottom: 60px;
 }
@@ -770,10 +769,6 @@ footer {
 
   section {
     padding: 30px 28px;
-  }
-
-  .section-label{
-    gap: 9px;
   }
 
   #hero {
