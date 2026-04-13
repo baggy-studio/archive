@@ -39,17 +39,17 @@ html {
 
 body {
   font-family: var(--font-body);
-  background: var(--white);
+  background: var(--blue);
   color: var(--white);
   overflow-x: hidden;
 }
 
 /* ─── NAV ─── */
 nav {
-  position: fixed;
+  /* position: fixed;
   top: 0;
   left: 0;
-  right: 0;
+  right: 0; */
   z-index: 100;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -73,21 +73,21 @@ nav .nav-links {
   align-self: start;
 }
 
-nav .nav-middle {
-  position: absolute;
-  top: 24px;
+/* nav .nav-middle { */
+  /* position: absolute;
+  top: 24px; */
   /* col 2 start = left-padding + col-width + gap
      col-width = (100% - 2×48px padding - 2×84px gap) / 3 = (100% - 264px) / 3 */
-  left: calc(48px + (100% - 264px) / 3 + 84px);
-  width: calc((100% - 264px) / 3);
-}
+  /* left: calc(48px + (100% - 264px) / 3 + 84px);
+  width: calc((100% - 264px) / 3); */
+/* } */
 
-nav .nav-right {
+/* nav .nav-right {
   position: absolute;
   top: 24px;
   right: 48px;
   width: calc((100% - 264px) / 3);
-}
+} */
 
 nav .menu-btn {
   grid-column: 1;
@@ -220,9 +220,8 @@ nav .nav-right a:hover {
 /* ─── HERO ─── */
 #hero {
   background: var(--blue);
-  min-height: 100vh;
   display: flex;
-  padding: max(380px, 25vw) 48px 60px;
+  padding: 48px 60px 0px 60px;
   gap: 0;
   position: relative;
 }

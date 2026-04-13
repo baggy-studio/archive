@@ -6,10 +6,10 @@ body {
 }
 
 /* ─── NAV (speaker layout: back link + title) ─── */
-nav .nav-right,
+/* nav .nav-right,
 nav .nav-middle {
   display: none;
-}
+} */
 
 nav .nav-wordmark {
   opacity: 1 !important;
@@ -35,7 +35,7 @@ nav .nav-title {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 85px;
-  padding: 340px 85px 0px 85px;
+  padding: 60px 85px 0px 85px;
 }
 
 /* ─── SPEAKER HERO ─── */
