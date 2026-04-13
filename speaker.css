@@ -35,7 +35,7 @@ nav .nav-title {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 85px;
-  padding: 280px 85px 0px 85px;
+  padding: 340px 85px 0px 85px;
 }
 
 /* ─── SPEAKER HERO ─── */

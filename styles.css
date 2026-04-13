@@ -52,7 +52,7 @@ nav {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   gap: 85px;
-  padding: 24px 85px 0px 85px;
+  padding: 70px 85px 0px 85px;
   mix-blend-mode: normal;
   background-color:var(--blue);
 }
@@ -300,6 +300,10 @@ section {
   background: var(--blue);
 }
 
+.about-label::after {
+  background: var(--white);
+}
+
 .section-heading {
   font-family: var(--font-body);
   font-size: clamp(32px, 4vw, 60px);
@@ -379,7 +383,8 @@ section {
 }
 
 .logo img {
-  max-width: 100%;
+  max-width: 200px;
+  width: 100%;
   max-height: 88px;
 }
 
