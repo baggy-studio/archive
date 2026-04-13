@@ -885,6 +885,7 @@ footer {
   .footer-top {
     grid-template-columns: 1fr;
     row-gap: 45px;
+    column-gap: 0px;
   }
   .footer-contact a:first-child{
     margin-bottom: 24px;
