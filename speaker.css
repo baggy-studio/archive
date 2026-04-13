@@ -130,7 +130,7 @@ nav .nav-title {
   #speaker-main {
     grid-template-columns: 1fr;
     gap: 30px;
-    padding: 0px 28px 0px 28px;
+    padding: 30px 28px 0px 28px;
   }
 
   .speaker-hero {
@@ -161,6 +161,6 @@ nav .nav-title {
     gap: 30px;
   }
   .speaker-links-section {
-    padding: 85px 0px 60px;
+    padding: 1.2em 0px 60px;
   }
 }
