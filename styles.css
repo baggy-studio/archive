@@ -791,7 +791,7 @@ footer {
 
   #hero {
     grid-template-columns: 1fr;
-    padding: 100px 28px 60px;
+    padding: 100px 28px 0px;
   }
 
   #hero .hero-logo {

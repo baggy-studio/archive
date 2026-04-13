@@ -17,8 +17,6 @@
     body{font-family:var(--font-body);background:var(--white);color:var(--white);overflow-x:hidden}
     nav{z-index:100;display:grid;grid-template-columns:repeat(3,1fr);gap:85px;padding:70px 85px 0 85px;background-color:var(--blue)}
     nav .nav-links{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-self:start}
-    /* nav .nav-middle{position:absolute;top:24px;left:calc(48px + (100% - 264px)/3 + 84px);width:calc((100% - 264px)/3)}
-    nav .nav-right{position:absolute;top:24px;right:48px;width:calc((100% - 264px)/3)} */
     nav .menu-btn{grid-column:1;grid-row:1}
     nav .nav-wordmark{grid-column:2/4;grid-row:1;align-self:start;opacity:0;pointer-events:none}
     nav .nav-wordmark svg{width:100%;height:auto;display:block}
@@ -39,7 +37,7 @@
       nav .nav-middle{display:block;width:auto}
       nav .nav-wordmark{display:block;flex:1;opacity:0;pointer-events:none;align-self:center}
       .menu-btn{display:flex;flex-shrink:0}
-      #hero{padding:100px 28px 60px;}
+      #hero{padding:100px 28px 0px;}
     }
   </style>
   <!-- Full stylesheet loaded async — does not block first paint -->
