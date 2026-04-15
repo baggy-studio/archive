@@ -114,25 +114,14 @@ document.addEventListener('keydown', e => {
   if (e.key === 'Escape') closeFlyout();
 });
 
-// ─── NAV HEIGHT → #speaker-main PADDING ───
-// function setNavOffsetPadding() {
-//   const speakerMain = document.getElementById('speaker-main');
-//   if (!speakerMain) return;
-//   const navHeight = document.querySelector('nav[aria-label="Main navigation"]').offsetHeight;
-//   speakerMain.style.paddingTop = navHeight + 'px';
-// }
 
-// if (document.getElementById('speaker-main')) {
-//   window.addEventListener('load', setNavOffsetPadding);
-//   window.addEventListener('resize', setNavOffsetPadding);
-// }
-
-// ─── NAV-OFFSET ANCHOR SCROLLING ───
-document.querySelectorAll('.nav-links a[href^="#"]').forEach(link => {
+// ─── NAV-OFFSET ANCHOR SCROLLING (flyout only) ───
+document.querySelectorAll('.flyout-links a[href^="#"]').forEach(link => {
   link.addEventListener('click', e => {
     const target = document.querySelector(link.getAttribute('href'));
     if (!target) return;
     e.preventDefault();
+    closeFlyout();
     const navHeight = document.querySelector('nav[aria-label="Main navigation"]').offsetHeight;
     const top = target.getBoundingClientRect().top + window.scrollY - navHeight;
     window.scrollTo({ top, behavior: 'smooth' });

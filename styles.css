@@ -296,7 +296,7 @@ section {
 .section-label::after, .about-label::after {
   content: '';
   display: block;
-  height: 9px;
+  height: .5vw;
   width: 100%;
   background: var(--blue);
 }
@@ -325,7 +325,7 @@ section {
 
 .about-label {
   font-family: var(--font-body);
-  font-size: clamp(32px, 4vw, 60px);
+  font-size: clamp(48px, 4vw, 83px);
   color: var(--white);
   display: flex;
   align-items: flex-start;
@@ -499,6 +499,7 @@ section {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  letter-spacing: -0.02em;
 }
 
 .btn-purchase:hover {
@@ -512,7 +513,7 @@ section {
 .arrow-icon {
   display: flex;
   width: clamp(46px, 10vw, 128px);
-  height: clamp(73px, 10vw, 203px);
+  height: clamp(73px, 9vw, 160px);
 }
 
 .arrow-icon img {
@@ -574,6 +575,7 @@ section {
   color: var(--blue);
   grid-column: span 2;
   line-height: 1;
+  letter-spacing: -0.02em;
 }
 
 .schedule-talk a {
