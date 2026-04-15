@@ -221,7 +221,7 @@ nav .nav-right a:hover {
 #hero {
   background: var(--blue);
   display: flex;
-  padding: 48px 60px 0px 60px;
+  padding: clamp(150px, 15.625vw, 300px) 85px 0px 85px;
   gap: 0;
   position: relative;
 }
@@ -279,7 +279,7 @@ nav .nav-right a:hover {
 
 /* ─── SECTION SHARED ─── */
 section {
-  padding: 80px 85px;
+  padding: 60px 85px;
 }
 
 .section-label {
@@ -793,7 +793,7 @@ footer {
 
   #hero {
     grid-template-columns: 1fr;
-    padding: 100px 28px 0px;
+    padding: 150px 28px 0px;
   }
 
   #hero .hero-logo {
