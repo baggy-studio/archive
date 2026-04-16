@@ -574,7 +574,7 @@ section {
   font-size: clamp(73px, 10vw, 203px);
   color: var(--blue);
   grid-column: span 2;
-  line-height: 1;
+  line-height: .9;
   letter-spacing: -0.02em;
 }
 
@@ -668,7 +668,7 @@ footer {
   grid-template-columns: repeat(3, 1fr);
   gap: 85px;
   align-items: start;
-  margin-bottom: 60px;
+  margin-bottom: clamp(300px, calc(13.9vw + 133px), 400px);
 }
 
 .footer-logo svg,
