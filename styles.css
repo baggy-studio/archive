@@ -482,6 +482,12 @@ section {
 .ticket-info {
   font-family: var(--font-body);
   font-size: clamp(48px, 4vw, 83px);
+  display: flex;
+  flex-direction: column;
+}
+
+.ticket-access{
+  padding-bottom: 60px;
 }
 
 .ticket-purchase {
@@ -512,8 +518,8 @@ section {
 
 .arrow-icon {
   display: flex;
-  width: clamp(46px, 10vw, 128px);
-  height: clamp(73px, 9vw, 160px);
+  width: clamp(40px, 8.5vw, 110px);
+  height: clamp(63px, 7.6vw, 136px);
 }
 
 .arrow-icon img {
@@ -846,9 +852,15 @@ footer {
     grid-template-columns: 1fr;
     gap: 20px;
   }
+
   .ticket-info{
     line-height: 0.85;
+    gap: 35px;
   }
+
+  .ticket-access{
+  padding-bottom: 0px;
+}
 
   #schedule .section-header {
     grid-template-columns: 1fr;
