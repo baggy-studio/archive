@@ -74,34 +74,6 @@ nav .menu-btn {
   grid-row: 1;
 }
 
-/* ─── FLYING WORDMARK (JS-created overlay, animates from hero → nav) ─── */
-.flying-wordmark {
-  position: fixed;
-  z-index: 200;
-  pointer-events: none;
-}
-
-.flying-wordmark svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
-/* ─── NAV WORDMARK (revealed on scroll) ─── */
-nav .nav-wordmark {
-  grid-column: 2 / 4;
-  grid-row: 1;
-  align-self: start;
-  opacity: 0;
-  pointer-events: none;
-}
-
-nav .nav-wordmark svg {
-  width: 100%;
-  height: auto;
-  display: block;
-}
-
 nav .nav-links a {
   font-family: var(--font-body);
   font-size: clamp(26px, calc(2.903vw - 9.74px), 46px);
@@ -223,39 +195,6 @@ nav .nav-right a:hover {
   display: block;
 }
 
-
-#hero .hero-meta {
-  grid-column: 2 / 3;
-  padding-top: 48px;
-}
-
-#hero .hero-meta .tagline {
-  font-family: var(--font-body);
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: var(--white);
-  line-height: 1.3;
-  margin-bottom: 48px;
-}
-
-#hero .hero-meta .event-details {
-  font-family: var(--font-body);
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: var(--white);
-  line-height: 1.5;
-}
-
-#hero .hero-hosted {
-  grid-column: 3 / 4;
-  padding-top: 48px;
-  padding-left: 48px;
-}
-
-#hero .hero-hosted p {
-  font-family: var(--font-body);
-  font-size: clamp(16px, 1.8vw, 22px);
-  color: var(--white);
-  line-height: 1.5;
-}
 
 /* ─── SECTION SHARED ─── */
 section {
@@ -417,12 +356,6 @@ section {
   .speaker-card:hover .img-hover { opacity: 1; }
 }
 
-.speaker-card-inner {
-  position: relative;
-  width: 100%;
-  height: 100%;
-}
-
 .speaker-info {
   position: relative;
   padding-top: 8px;
@@ -572,11 +505,6 @@ section {
 
 .schedule-talk a:hover {
   color: var(--black);
-}
-
-.schedule-talk.muted {
-  color: #444;
-  font-size: clamp(16px, 2vw, 36px);
 }
 
 /* ─── VENUE ─── */
@@ -745,20 +673,6 @@ footer {
   nav .nav-middle {
     display: block;
     width: auto;
-  }
-
-  nav .nav-wordmark {
-    display: block;
-    flex: 1;
-    opacity: 0;
-    pointer-events: none;
-    align-self: center;
-  }
-
-  nav .nav-wordmark svg {
-    width: 100%;
-    height: auto;
-    display: block;
   }
 
   .logo img {

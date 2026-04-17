@@ -18,14 +18,10 @@
     nav{z-index:100;display:grid;grid-template-columns:repeat(3,1fr);gap:60px;padding:60px 60px 0 60px;background-color:var(--blue)}
     nav .nav-links{grid-column:1;grid-row:1;display:flex;flex-direction:column;align-self:start}
     nav .menu-btn{grid-column:1;grid-row:1}
-    nav .nav-wordmark{grid-column:2/4;grid-row:1;align-self:start;opacity:0;pointer-events:none}
-    nav .nav-wordmark svg{width:100%;height:auto;display:block}
     nav .nav-links a{font-family:var(--font-body);font-size:clamp(26px,calc(2.903vw - 9.74px),46px);color:var(--blue-light);text-decoration:none}
     nav .nav-right,nav .nav-middle{font-family:var(--font-body);font-size:clamp(26px,calc(2.903vw - 9.74px),46px);color:var(--white)}
     .menu-btn{display:none;background:none;border:none;font-family:var(--font-body);font-size:clamp(26px,calc(2.903vw - 9.74px),46px);color:var(--blue-light);cursor:pointer;padding:0}
     .flyout{position:fixed;top:0;left:0;width:100%;background-color:var(--blue-light);z-index:200;padding:28px 28px 40px;display:flex;align-items:flex-start;transform:translateY(-100%);transition:transform .35s ease;pointer-events:none;height:322px}
-    .flying-wordmark{position:fixed;z-index:200;pointer-events:none}
-    .flying-wordmark svg{width:100%;height:auto;display:block}
     #hero{background:var(--blue);display:flex;padding: 48px 60px;position:relative}
     #hero .hero-logo{display:flex;align-items:flex-end;width:100%;flex:1}
     .archive-wordmark{width:100%}
@@ -35,7 +31,6 @@
       nav .nav-links{display:none}
       nav .nav-right{display:none}
       nav .nav-middle{display:block;width:auto}
-      nav .nav-wordmark{display:block;flex:1;opacity:0;pointer-events:none;align-self:center}
       .menu-btn{display:flex;flex-shrink:0}
       #hero{padding:100px 28px 0px;}
     }
@@ -45,7 +40,6 @@
   <noscript><link rel="stylesheet" href="styles.css"></noscript>
   <!-- Preload the body font — used in nav text visible above the fold -->
   <link rel="preload" href="assets/fonts/NYC_Sans_v0_2-Medium-TRIAL.otf" as="font" type="font/otf" crossorigin>
-  <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 </head>
 
 <body>

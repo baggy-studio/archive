@@ -6,11 +6,6 @@ body {
 }
 
 /* ─── NAV (speaker layout: back link + title) ─── */
-nav .nav-wordmark {
-  opacity: 1 !important;
-  pointer-events: all;
-}
-
 nav .nav-back a {
   font-size: 18px;
   color: var(--black);
@@ -94,7 +89,7 @@ nav .nav-title {
 
 /* ─── LINKS ─── */
 .speaker-links-section {
-  padding: 1.2em 0px 80px;
+  padding: 1.2em 0px 60px;
   background: var(--blue);
   grid-column: 2 / span 2;
 }
