@@ -266,6 +266,10 @@ section {
   text-wrap: pretty;
 }
 
+.about-sign {
+  margin-bottom: 0;
+}
+
 .about-text p a {
   color: var(--blue-light);
 }
