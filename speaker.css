@@ -6,11 +6,6 @@ body {
 }
 
 /* ─── NAV (speaker layout: back link + title) ─── */
-/* nav .nav-right,
-nav .nav-middle {
-  display: none;
-} */
-
 nav .nav-wordmark {
   opacity: 1 !important;
   pointer-events: all;
@@ -34,8 +29,8 @@ nav .nav-title {
 #speaker-main {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
-  padding: 60px 85px 0px 85px;
+  gap: 60px;
+  padding: 60px 60px 0px 60px;
 }
 
 /* ─── SPEAKER HERO ─── */
@@ -107,7 +102,6 @@ nav .nav-title {
 .speaker-links-label {
   font-size: clamp(26px, calc(2.903vw - 9.74px), 46px);
   color: var(--white);
-  /* margin-bottom: 12px; */
 }
 
 .speaker-links a {

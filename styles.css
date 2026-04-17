@@ -46,15 +46,11 @@ body {
 
 /* ─── NAV ─── */
 nav {
-  /* position: fixed;
-  top: 0;
-  left: 0;
-  right: 0; */
   z-index: 100;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
-  padding: 70px 85px 0px 85px;
+  gap: 60px;
+  padding: 60px 60px 0px 60px;
   mix-blend-mode: normal;
   background-color:var(--blue);
 }
@@ -72,22 +68,6 @@ nav .nav-links {
   flex-direction: column;
   align-self: start;
 }
-
-/* nav .nav-middle { */
-  /* position: absolute;
-  top: 24px; */
-  /* col 2 start = left-padding + col-width + gap
-     col-width = (100% - 2×48px padding - 2×84px gap) / 3 = (100% - 264px) / 3 */
-  /* left: calc(48px + (100% - 264px) / 3 + 84px);
-  width: calc((100% - 264px) / 3); */
-/* } */
-
-/* nav .nav-right {
-  position: absolute;
-  top: 24px;
-  right: 48px;
-  width: calc((100% - 264px) / 3);
-} */
 
 nav .menu-btn {
   grid-column: 1;
@@ -221,7 +201,7 @@ nav .nav-right a:hover {
 #hero {
   background: var(--blue);
   display: flex;
-  padding: clamp(150px, 15.625vw, 300px) 85px 0px 85px;
+  padding: clamp(150px, 15.625vw, 300px) 60px 0px 60px;
   gap: 0;
   position: relative;
 }
@@ -279,7 +259,7 @@ nav .nav-right a:hover {
 
 /* ─── SECTION SHARED ─── */
 section {
-  padding: 60px 85px;
+  padding: 60px 60px;
 }
 
 .section-label {
@@ -320,7 +300,7 @@ section {
 #about .about-inner {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
 }
 
 .about-label {
@@ -364,7 +344,7 @@ section {
   background: var(--blue-light);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
 }
 
 #support .support-label {
@@ -402,7 +382,7 @@ section {
 .speakers-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
   margin-top: 0;
 }
 
@@ -469,7 +449,7 @@ section {
   color: var(--blue);
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
 }
 
 .tickets-inner {
@@ -541,7 +521,7 @@ section {
 #schedule .section-header {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
   margin-bottom: 30px;
 }
 
@@ -561,7 +541,7 @@ section {
 .schedule-row {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
 }
 
 .schedule-row:last-child {
@@ -623,7 +603,7 @@ section {
   padding: 40px 0;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
 
 }
 
@@ -666,13 +646,13 @@ section {
 footer {
   background: var(--blue);
   color: var(--white);
-  padding: 70px 85px;
+  padding: 60px 60px;
 }
 
 .footer-top {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 85px;
+  gap: 60px;
   align-items: start;
   margin-bottom: clamp(300px, calc(13.9vw + 133px), 400px);
 }
